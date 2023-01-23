@@ -1,10 +1,10 @@
-GET http://127.0.0.1:5000/users
+GET https://register-login-api.vercel.app:5000/users
 
 ###
 GET http://127.0.0.1:5000/users/tim@example.com
 
 ###
-PATCH  http://127.0.0.1:5000/users/25
+PATCH  https://register-login-api.vercel.app:5000/users/25
 Content-Type: application/json
 
 {
