@@ -51,7 +51,7 @@ class Login extends React.Component {
 
         try {
 
-            let res = await axios.get('http://register-login-api.vercel.app/api/users/' + this.state.email, {
+            let res = await axios.get('https://register-login-api.vercel.app/api/users/' + this.state.email, {
                 email: this.state.email,
                 password : this.state.password
             });
@@ -63,7 +63,7 @@ class Login extends React.Component {
                 this.resetForm();
             }
             else if (result && res.status == 200) {
-                res = await axios.get('http://register-login-api.vercel.app/api/users/' + this.state.email);
+                res = await axios.get('https://register-login-api.vercel.app/api/users/' + this.state.email);
                 UserStore.id = res.data.id;
                 UserStore.isLoggedIn = true; 
                 UserStore.name = res.data.name;
