@@ -52,7 +52,7 @@ class Register extends React.Component {
 
         try {
 
-            let res = await axios.post('http://127.0.0.1:5000/users', {
+            let res = await axios.post('http://register-login-api.vercel.app/api/users', {
                 name : this.state.username,
                 email: this.state.email,
                 password : this.state.password
@@ -61,7 +61,7 @@ class Register extends React.Component {
             let result = await res.config.data;
 
             if (result && res.status == 201) {
-                res = await axios.get('http://127.0.0.1:5000/users/' + this.state.email);
+                res = await axios.get('http://register-login-api.vercel.app/api/users/' + this.state.email);
                 UserStore.id = res.data.id;
                 UserStore.isLoggedIn = true; 
                 UserStore.name = this.state.username;

@@ -42,14 +42,14 @@ class UserList extends React.Component {
 
     getUsers = async () => {
 
-        const response = await axios.get('http://127.0.0.1:5000/users');
+        const response = await axios.get('http://register-login-api.vercel.app/api/users');
         this.setState({ users: response.data });
     }
     
     deleteUser = async () => {
 
         try {
-            this.state.isCheck.forEach(async id => {await  axios.delete('http://127.0.0.1:5000/users/'+ id)});
+            this.state.isCheck.forEach(async id => {await  axios.delete('http://register-login-api.vercel.app/api/users/'+ id)});
 
             if (this.state.isCheck.includes(`${UserStore.id}`)) {
                 this.goToPage();
@@ -63,7 +63,7 @@ class UserList extends React.Component {
 
     blockUser = async () => {
         try {
-            this.state.isCheck.forEach(async id => {await  axios.patch('http://127.0.0.1:5000/users/'+ id, {status: true})});
+            this.state.isCheck.forEach(async id => {await  axios.patch('http://register-login-api.vercel.app/api/users/'+ id, {status: true})});
 
             if (this.state.isCheck.includes(`${UserStore.id}`)) {
                 this.goToPage();
@@ -78,8 +78,8 @@ class UserList extends React.Component {
 
     unblockUser = async () => {
         try {
-            this.state.isCheck.forEach(async id => {await  axios.patch('http://127.0.0.1:5000/users/'+ id, {status: false})});
-            
+            this.state.isCheck.forEach(async id => {await  axios.patch('http://register-login-api.vercel.app/api/users/'+ id, {status: false})});
+
             this.getUsers();
         }
         catch (error) {
