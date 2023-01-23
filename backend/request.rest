@@ -1,0 +1,26 @@
+GET http://127.0.0.1:5000/users
+
+###
+GET http://127.0.0.1:5000/users/tim@example.com
+
+###
+PATCH  http://127.0.0.1:5000/users/25
+Content-Type: application/json
+
+{
+    "status": "deleted"
+}
+
+###
+POST  http://127.0.0.1:5000/users
+Content-Type: application/json
+
+{
+    "name" : "Tim",
+    "email" : "tim",
+    "password" : "123",
+    "status": "unblock"
+}
+
+###
+DELETE  http://127.0.0.1:5000/users/26
