@@ -1,7 +1,7 @@
 import express from 'express';
 import UserRoute from './routes/UserRoute.js';
 import cors from 'cors';
-import https from 'https';
+import http from 'http';
 
 const app = express();
 
@@ -12,5 +12,5 @@ app.use(UserRoute);
 
 console.log('server running');
 
-const server = https.createServer(app);
+const server = http.createServer(app);
 server.listen(5000);
