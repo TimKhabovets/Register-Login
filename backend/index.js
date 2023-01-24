@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(UserRoute);
 
-console.log('server running');
-
 const server = https.createServer(app);
 server.listen(5000);
+
+console.log('server running');
