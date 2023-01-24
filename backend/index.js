@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 app.use(UserRoute);
 
-const server = https.createServer(app);
-server.listen(5000);
+app.listen(5000);
 
 console.log('server running');
